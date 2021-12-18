@@ -1,19 +1,57 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="description" content="DashboardKit is modern yet powerful Bootstrap 5 Admin Template comes with thousands of UI components & 180+ pages."/>
+		<meta name="keywords" content="DashboardKit, Dashboard Kit, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Free Bootstrap Admin Template"/>
+		<meta name="author" content="Guillaume COUGET"/>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!-- Favicon icon -->
+    <link rel="icon" href=" {{ asset('custom/images/favicon.svg') }} " type="image/x-icon">
+  
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+      <!-- font css -->
+      <link rel="stylesheet" href=" {{ asset('custom/fonts/tabler-icons.min.css') }} ">
+      <link rel="stylesheet" href=" {{ asset('custom/fonts/feather.css') }} ">
+      <link rel="stylesheet" href=" {{ asset('custom/fonts/fontawesome.css') }} ">
+      <link rel="stylesheet" href=" {{ asset('custom/fonts/material.css') }} ">
+
+      <!-- vendor css -->
+      <link rel="stylesheet" href=" {{ asset('custom/css/style.css') }} " id="main-style-link">
+      <link rel="stylesheet" href=" {{ asset('custom/css/customizer.css') }} ">
+      <link rel="stylesheet" href=" {{ asset('custom/css/layout-horizontal.css') }} ">
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+      <script src=" {{ asset('custom/js/vendor-all.min.js') }} "></script>
+      <script src=" {{ asset('custom/js/plugins/bootstrap.min.js') }} "></script>
+      <script src=" {{ asset('custom/js/plugins/feather.min.js') }} "></script>
+      <script src=" {{ asset('custom/js/pcoded.js') }} "></script>
+		{% endblock %}
+	</head>
+	<body class="">
+  
+    <!-- [ Pre-loader ] start -->
+    {% include "base/preloader.html.twig" %}
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ Mobile header ] start -->
+    {% include "base/mobile-header.html.twig" %}
+    <!-- [ Mobile header ] End -->
+
+    <!-- [ Main Content ] start -->
+      {% block body %}{% endblock %}
+
+	</body>
 </html>
