@@ -5,97 +5,79 @@
 
 {% block body %}
 
-	<!-- [ signin-img ] start -->
-	<div class="auth-wrapper align-items-stretch aut-bg-img">
-		<div class="flex-grow-1">
-			<div class="h-100 d-lg-flex align-items-end auth-side-img">
-				<div class="col-sm-10 auth-content w-auto">
-					<img src=" {{ asset('custom/images/logo.svg') }} " alt="" class="img-fluid">
-					<h1 class="text-white my-4">MAINTENANCE</h1>
-					<h4 class="text-white font-weight-normal">ERP / CRM | Gestion de l'entreprise<br/>Do not forget to play with live customizer</h4>
-				</div>
+	<form method="post">
+
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Logout</a>
 			</div>
-			<div class="auth-side-form">
-				<div class=" auth-content">
-					<form method="post">
-						{% if error %}
-							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-						{% endif %}
+		{% endif %}
 
-						{% if app.user %}
-							<div class="mb-3">
-								You are logged in as
-								{{ app.user.username }},
-								<a href="{{ path('app_logout') }}">Logout</a>
-							</div>
-						{% endif %}
-
-						<img src=" {{ asset('custom/images/auth/auth-logo-dark.svg') }} " alt="" class="img-fluid mb-4 d-block d-xl-none d-lg-none">
-						<h3 class="mb-4 f-w-400">CONNEXION</h3>
-
-						<div class="input-group mb-3">
-							<span class="input-group-text">
-								<i data-feather="mail"></i>
-							</span>
-							<input type="email" class="form-control" placeholder="Identifiant">
-						</div>
-
-						<div class="input-group mb-4">
-							<span class="input-group-text">
-								<i data-feather="lock"></i>
-							</span>
-							<input type="password" class="form-control" placeholder="Mot de passe">
-						</div>
-
-						<div class="form-group  mt-2">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-								<label class="form-check-label" for="flexCheckChecked">
-									Souviens-toi de moi
-								</label>
+		<!-- [ auth-signup ] start -->
+		<div class="auth-wrapper auth-v3">
+			<div class="auth-content">
+				<div class="card">
+					<div class="row align-items-stretch text-center">
+						<div class="col-md-6 img-card-side">
+							<img src=" {{ asset('custom/images/auth/auth-side1.jpg') }} " alt="" class="img-fluid">
+							<div class="img-card-side-content">
+								<img src=" {{ asset('custom/images/logo-dark.svg') }} " alt="" class="img-fluid">
 							</div>
 						</div>
-
-						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-						{#
-						                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-						                        See https://symfony.com/doc/current/security/remember_me.html
-						
-						                        <div class="checkbox mb-3">
-						                            <label>
-						                                <input type="checkbox" name="_remember_me"> Remember me
-						                            </label>
-						                        </div>
-						                    #}
-
-						<button class="btn btn-block btn-primary mb-0">Je me connecte</button>
-					</form>
-
-
-					<div class="text-center">
-          {#
-						<div class="saprator my-4">
-							<span>OU ALORS !</span>
+						<div class="col-md-6">
+							<div class="card-body">
+								<div class="text-left">
+									<h4 class="mb-3 f-w-600">Bienvenue sur
+										<span class="text-primary">Maintenance</span>
+									</h4>
+									<p class="text-muted mb-4">Votre ERP au quotidien !</p>
+								</div>
+								<div class="">
+									<div class="input-group mb-3">
+										<span class="input-group-text">
+											<i data-feather="mail"></i>
+										</span>
+										<input type="email" class="form-control" placeholder="Adresse Email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus>
+									</div>
+									<div class="input-group mb-4">
+										<span class="input-group-text">
+											<i data-feather="lock"></i>
+										</span>
+										<input type="password" class="form-control" placeholder="Mot de passe" name="password" id="inputPassword" autocomplete="current-password" required>
+										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+									</div>
+									{#
+									<div class="form-group text-left my-2">
+										<div class="float-right">
+											<a href="#!" class="text-primary"><span>J'ai oublié mon mot de passe</span></a>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+											<label class="form-check-label" for="flexCheckChecked">
+												Souvient toi de moi!
+											</label>
+										</div>
+									</div>
+									#}
+								</div>
+								<div class="text-right">
+									{#<button class="btn btn-light-primary mt-2">Effacer</button>#}
+									<button class="btn btn-primary mt-2">Je me connecte</button>
+								</div>
+							</div>
 						</div>
-						
-            <button class="btn text-white bg-facebook mb-2 me-2  wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-facebook-f"></i></button>
-            <button class="btn text-white bg-googleplus mb-2 me-2 wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-google-plus-g"></i></button>
-            <button class="btn text-white bg-twitter mb-2  wid-40 px-0 hei-40 rounded-circle"><i class="fab fa-twitter"></i></button>
-            
-						<p class="mb-2 mt-4 text-muted">J'ai oublié mon mot de passe?
-							<a href="#" class="f-w-400">Reset</a>
-						</p>
-						<p class="mb-0 text-muted">je n'ai pas de compte?
-							<a href="#" class="f-w-400">Signup</a>
-						</p>
-            #}
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- [ signin-img ] end -->
-
+		<!-- [ auth-signup ] end -->
+		
+	</form>
 
 {% endblock %}
