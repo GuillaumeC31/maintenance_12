@@ -17,7 +17,6 @@
     <!-- Favicon icon -->
     <link rel="icon" href=" {{ asset('custom/images/favicon.svg') }} " type="image/x-icon">
   
-
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
       <!-- font css -->
@@ -39,6 +38,7 @@
       <script src=" {{ asset('custom/js/plugins/feather.min.js') }} "></script>
       <script src=" {{ asset('custom/js/pcoded.js') }} "></script>
 		{% endblock %}
+
 	</head>
 	<body class="">
   
@@ -51,7 +51,7 @@
     <!-- [ Mobile header ] End -->
 
     <!-- [ Main Content ] start -->
-      {% block body %}{% endblock %}
+    {% block body %}{% endblock %}
 
-	</body>
+  </body>
 </html>

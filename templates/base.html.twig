@@ -20,6 +20,7 @@
 
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
+      <link rel="stylesheet" href=" {{ asset('custom/css/plugins/animate.min.css') }} ">
       <!-- font css -->
       <link rel="stylesheet" href=" {{ asset('custom/fonts/tabler-icons.min.css') }} ">
       <link rel="stylesheet" href=" {{ asset('custom/fonts/feather.css') }} ">
@@ -30,6 +31,7 @@
       <link rel="stylesheet" href=" {{ asset('custom/css/style.css') }} " id="main-style-link">
       <link rel="stylesheet" href=" {{ asset('custom/css/customizer.css') }} ">
       <link rel="stylesheet" href=" {{ asset('custom/css/layout-horizontal.css') }} ">
+
 		{% endblock %}
 
 		{% block javascripts %}
