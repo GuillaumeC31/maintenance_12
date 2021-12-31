@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,10 +12,12 @@ class AnnuaireController extends AbstractController
     /**
      * @Route("/annuaire", name="app_annuaire")
      */
-    public function annuaire(): Response
+    public function annuaire(UserRepository $user): Response
     {
+        $alluser = $user->findAll();
+
         return $this->render('annuaire/index.html.twig', [
-            'controller_name' => 'AnnuaireController',
+            'alluser' => $alluser,
         ]);
     }
 
