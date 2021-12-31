@@ -50,6 +50,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $genre;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fonction;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $region;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $agence;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $service;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +191,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGenre(string $genre): self
     {
         $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getFonction(): ?string
+    {
+        return $this->fonction;
+    }
+
+    public function setFonction(string $fonction): self
+    {
+        $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(string $region): self
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    public function getAgence(): ?string
+    {
+        return $this->agence;
+    }
+
+    public function setAgence(string $agence): self
+    {
+        $this->agence = $agence;
+
+        return $this;
+    }
+
+    public function getService(): ?string
+    {
+        return $this->service;
+    }
+
+    public function setService(string $service): self
+    {
+        $this->service = $service;
 
         return $this;
     }

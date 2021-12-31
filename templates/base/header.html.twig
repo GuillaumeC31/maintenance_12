@@ -9,7 +9,7 @@
           <ul class="list-unstyled">
             <li class="dropdown pc-h-item">
               <a class="pc-head-link active dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                Level
+                {{ app.user.region|upper }} / {{ app.user.agence|upper }} / {{ app.user.service }}
               </a>
               <div class="dropdown-menu pc-h-dropdown">
                 <a href="#!" class="dropdown-item">
@@ -226,8 +226,11 @@
               <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <img src=" {{ asset('custom/images/user/avatar-2.jpg') }} " alt="user-image" class="user-avtar">
                 <span>
-                  <span class="user-name">{{ app.user.prenom }} {{ app.user.nom }}</span>
-                  <span class="user-desc">Administrator</span>
+                  <span class="user-name">
+                    {% if app.user.genre == 'homme' %} M. {% endif %}
+                    {% if app.user.genre == 'femme' %} Mme {% endif %}
+                    {{ app.user.nom }} {{ app.user.prenom }}</span>
+                  <span class="user-desc">{{ app.user.fonction }}</span>
                 </span>
               </a>
               <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">

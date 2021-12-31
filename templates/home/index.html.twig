@@ -5,6 +5,7 @@
 
 {% block body %}
 	<!-- [ breadcrumb ] start -->
+	{#
 	<div class="page-header">
 		<div class="page-block">
 			<div class="row align-items-center">
@@ -35,11 +36,11 @@
 			</div>
 		</div>
 	</div>
+	#}
 	<!-- [ breadcrumb ] end -->
 
 	<!-- [ Main Content ] start -->
-	<div
-		class="row">
+	<div class="row">
 		<!-- [ sample-page ] start -->
 		<div class="col-sm-12">
 			<div class="row justify-content-center text-center">
@@ -62,8 +63,8 @@
 							<i class="feather icon-help-circle text-primary d-block h2 mb-0"></i>
 						</div>
 						<div class="col-8 pl-0">
-							<h4>10k+</h4>
-							<span>Support</span>
+							<h4> {{ count }} </h4>
+							<span>Utilisateurs</span>
 						</div>
 					</div>
 				</div>
@@ -122,46 +123,42 @@
 		<div class="col-lg-4 col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h5>Feature topics</h5>
+					<h5>ex: Synthèses SAV/DOP</h5>
 				</div>
 				<div class="list-group list-group-flush list-pills">
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Pipeline management</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Demande d'intervention</span>
 						<div class="float-end">
 							<span class="badge bg-light-danger">New</span>
 						</div>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Prospect tracking</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Ordre de Travail</span>
 						<div class="float-end">
 							<span class="badge bg-light-danger">New</span>
 						</div>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Email tracking & notifications</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Facturation</span>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Company insights</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Commandes Fournisseur</span>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Live chat</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Demandes Techniciens</span>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Meeting scheduling</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Gestion des heures</span>
 					</a>
 					<a href="#!" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#faq-modal">
 						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Reporting dashboard</span>
-					</a>
-					<a href="#!" class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="modal" data-bs-target="#faq-modal">
-						<span class="f-w-500">
-							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Deal tracking</span>
+							<i class="feather icon-chevrons-right m-r-10 f-16 text-primary"></i>Gestion du Stock</span>
 					</a>
 				</div>
 				<div class="card-footer">
@@ -371,6 +368,8 @@
 		<!-- [ sample-page ] end -->
 	</div>
 	<!-- [ Main Content ] end -->
+
+
 	<!-- Modal -->
 	<div class="modal fade" id="faq-modal" tabindex="-1" role="dialog" aria-labelledby="faq-modalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">

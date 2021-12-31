@@ -1,7 +1,7 @@
 ﻿    <nav class="pc-sidebar ">
       <div class="navbar-wrapper">
         <div class="m-header">
-          <a href="index.html" class="b-brand">
+          <a href="{{ path('app_home') }}" class="b-brand">
             <!-- ========   change your logo hear   ============ -->
             <img src=" {{ asset('custom/images/logo.svg') }} " alt="" class="logo logo-lg">
             <img src=" {{ asset('custom/images/logo-sm.svg') }} " alt="" class="logo logo-sm">
@@ -10,12 +10,16 @@
         <div class="navbar-content">
           <ul class="pc-navbar">
             <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link "><span class="pc-micon"><i data-feather="home"></i></span><span class="pc-mtext">Navigation</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+              <a href="#!" class="pc-link ">
+                <span class="pc-micon"><i data-feather="home"></i></span>
+                <span class="pc-mtext">Navigation</span>
+                <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+              </a>
               <ul class="pc-submenu">
                 <li class="pc-item pc-hasmenu">
                   <a href="#!" class="pc-link">Dashboard<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
                   <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="index.html">Sales</a></li>
+                    <li class="pc-item"><a class="pc-link" href="{{ path('app_home') }}">Sales</a></li>
                     <li class="pc-item"><a class="pc-link" href="dashboard-analytics.html">Analytics</a></li>
                   </ul>
                 </li>
@@ -53,7 +57,11 @@
               </ul>
             </li>
             <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link "><span class="pc-micon"><i data-feather="box"></i></span><span class="pc-mtext">Components</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+              <a href="#!" class="pc-link ">
+                <span class="pc-micon"><i data-feather="box"></i></span>
+                <span class="pc-mtext">Components</span>
+                <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+              </a>
               <ul class="pc-submenu">
                 <li class="pc-item pc-hasmenu">
                   <a href="#!" class="pc-link">Basic<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
@@ -125,12 +133,30 @@
               </ul>
             </li>
             <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link "><span class="pc-micon"><i data-feather="grid"></i></span><span class="pc-mtext">Bootstrap table</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+              <a href="#!" class="pc-link ">
+                <span class="pc-micon"><i data-feather="grid"></i></span>
+                <span class="pc-mtext">Bootstrap table</span>
+                <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+              </a>
               <ul class="pc-submenu">
                 <li class="pc-item"><a class="pc-link" href="tbl_bootstrap.html">Basic table</a></li>
                 <li class="pc-item"><a class="pc-link" href="tbl_sizing.html">Sizing table</a></li>
                 <li class="pc-item"><a class="pc-link" href="tbl_border.html">Border table</a></li>
                 <li class="pc-item"><a class="pc-link" href="tbl_styling.html">Styling table</a></li>
+              </ul>
+            </li>
+            <li class="pc-item pc-hasmenu">
+              <a href="#!" class="pc-link ">
+                <span class="pc-micon"><i data-feather="grid"></i></span>
+                <span class="pc-mtext">Annuaires</span>
+                <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+              </a>
+              <ul class="pc-submenu">
+                <li class="pc-item"><a class="pc-link" href=" # ">Tous</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Collaborateurs</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Fournisseurs</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Clients</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Divers</a></li>
               </ul>
             </li>
             <li class="pc-item"><a href="sample-page.html" class="pc-link "><span class="pc-micon"><i data-feather="sidebar"></i></span><span class="pc-mtext">Sample page</span></a></li>

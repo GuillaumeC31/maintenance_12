@@ -20,6 +20,9 @@
 
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
+      <!-- data tables css -->
+      <link rel="stylesheet" href=" {{ asset('custom/css/plugins/dataTables.bootstrap5.min.css') }} ">
+
       <link rel="stylesheet" href=" {{ asset('custom/css/plugins/animate.min.css') }} ">
       <!-- font css -->
       <link rel="stylesheet" href=" {{ asset('custom/fonts/tabler-icons.min.css') }} ">
@@ -36,6 +39,8 @@
 
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
+      <script src=" {{ asset('custom/js/plugins/jquery.dataTables.min.js') }} "></script>
+      <script src=" {{ asset('custom/js/plugins/dataTables.bootstrap5.min.js') }} "></script>
       <script src=" {{ asset('custom/js/vendor-all.min.js') }} "></script>
       <script src=" {{ asset('custom/js/plugins/bootstrap.min.js') }} "></script>
       <script src=" {{ asset('custom/js/plugins/feather.min.js') }} "></script>
