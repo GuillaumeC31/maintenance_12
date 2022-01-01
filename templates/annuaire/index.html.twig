@@ -10,12 +10,12 @@
 				<div class="row align-items-center">
 					<div class="col-md-12">
 						<div class="page-header-title">
-							<h5>User List</h5>
+							<h5>MAINTENANCE</h5>
 						</div>
 						<ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-							<li class="breadcrumb-item"><a href="#!">user</a></li>
-							<li class="breadcrumb-item">User list</li>
+							<li class="breadcrumb-item"><a href=" {{ path('app_home') }} ">ACCUEIL</a></li>
+							<li class="breadcrumb-item"><a href=" {{ path('app_annuaire') }} ">ANNUAIRE</a></li>
+							<li class="breadcrumb-item">Tous !</li>
 						</ul>
 					</div>
 				</div>
@@ -46,27 +46,27 @@
 									<tr>
 										{% for user in alluser %}
 											<td>
-											<div class="d-inline-block align-middle">
-												<img src=" {{ asset('custom/images/user/avatar-5.jpg') }} " alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
-												<div class="d-inline-block">
-													<h6 class="m-b-0">{{ user.nom }} {{ user.prenom }}</h6>
-													<p class="m-b-0">{{ user.email }}</p>
+												<div class="d-inline-block align-middle">
+													<img src=" {{ asset('custom/images/user/avatar-5.jpg') }} " alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
+													<div class="d-inline-block">
+														<h6 class="m-b-0">{{ user.nom }} {{ user.prenom }}</h6>
+														<p class="m-b-0">{{ user.email }}</p>
+													</div>
 												</div>
-											</div>
-										</td>
-										<td></td>
-										<td>{{ user.fonction }}</td>
-										<td>{{ user.region|upper }}</td>
-										<td>{{ user.agence|upper }}</td>
-										<td>{{ user.service|upper }}</td>
-										<td>
-											<span class="badge bg-light-success">Actif</span>
-											<div class="overlay-edit">
-												<button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
-												<button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
-											</div>
-										</td>
-										<td>{{ user.genre }}</td>
+											</td>
+											<td></td>
+											<td>{{ user.fonction }}</td>
+											<td>{{ user.region|upper }}</td>
+											<td>{{ user.agence|upper }}</td>
+											<td>{{ user.service|upper }}</td>
+											<td>
+												<span class="badge bg-light-success">Actif</span>
+												<div class="overlay-edit">
+													<button type="button" class="btn btn-icon btn-success"><i class="feather icon-check-circle"></i></button>
+													<button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
+												</div>
+											</td>
+											<td>{{ user.genre }}</td>
 										{% endfor %}
 									</tr>
 								</tbody>
