@@ -70,6 +70,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $service;
 
+    /**
+     * @ORM\Column(type="string", length=7)
+     */
+    private $identifiant;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -239,6 +244,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setService(string $service): self
     {
         $this->service = $service;
+
+        return $this;
+    }
+
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function setIdentifiant(string $identifiant): self
+    {
+        $this->identifiant = $identifiant;
 
         return $this;
     }

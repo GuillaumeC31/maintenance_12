@@ -50,6 +50,7 @@
 													<img src=" {{ asset('custom/images/user/avatar-5.jpg') }} " alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
 													<div class="d-inline-block">
 														<h6 class="m-b-0">{{ user.nom }} {{ user.prenom }}</h6>
+														<p class="m-b-0 fst-italic">- {{ user.identifiant }} -</p>
 														<p class="m-b-0">{{ user.email }}</p>
 													</div>
 												</div>
@@ -66,7 +67,7 @@
 													<button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
 												</div>
 											</td>
-											<td>{{ user.genre }}</td>
+											<td>{{ user.identifiant }}</td>
 										{% endfor %}
 									</tr>
 								</tbody>
@@ -246,5 +247,4 @@
 			</div>
 		</div>
 		<!-- [ Main Content ] end -->
-
 {% endblock %}
