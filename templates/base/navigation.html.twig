@@ -19,8 +19,9 @@
                 <li class="pc-item pc-hasmenu">
                   <a href="#!" class="pc-link">Dashboard<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
                   <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="{{ path('app_home') }}">Sales</a></li>
-                    <li class="pc-item"><a class="pc-link" href="dashboard-analytics.html">Analytics</a></li>
+                    {#<li {% if route_name == "app_home" %} class="pc-item active" {% else %} class="pc-item"><a class="pc-link" {% endif %} href="{{ path('app_home') }}">Sales</a></li>#}
+                    <li class="pc-item"><a class="pc-link" href="#">Sales</a></li>
+                    <li class="pc-item"><a class="pc-link" href="#">Analytics</a></li>
                   </ul>
                 </li>
                 <li class="pc-item pc-hasmenu">
@@ -143,6 +144,20 @@
                 <li class="pc-item"><a class="pc-link" href="tbl_sizing.html">Sizing table</a></li>
                 <li class="pc-item"><a class="pc-link" href="tbl_border.html">Border table</a></li>
                 <li class="pc-item"><a class="pc-link" href="tbl_styling.html">Styling table</a></li>
+              </ul>
+            </li>
+            <li class="pc-item pc-hasmenu">
+              <a href="#!" class="pc-link ">
+                <span class="pc-micon"><i data-feather="grid"></i></span>
+                <span class="pc-mtext">Gestion du Stock</span>
+                <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+              </a>
+              <ul class="pc-submenu">
+                <li class="pc-item"><a class="pc-link" href=" # ">Articles</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Catégories</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Mouvements</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Entrepôts</a></li>
+                <li class="pc-item"><a class="pc-link" href=" # ">Paramêtres</a></li>
               </ul>
             </li>
             <li class="pc-item pc-hasmenu">

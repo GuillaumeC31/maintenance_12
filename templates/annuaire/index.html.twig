@@ -38,8 +38,10 @@
 										<th>Région</th>
 										<th>Agence</th>
 										<th>Service</th>
+										{% if is_granted('ROLE_ADMIN') %}
 										<th>Status</th>
-										<th>Genre</th>
+										<th>Identifiant</th>
+										{% endif %}
 									</tr>
 								</thead>
 								<tbody>
@@ -50,7 +52,9 @@
 													<img src=" {{ asset('custom/images/user/avatar-5.jpg') }} " alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
 													<div class="d-inline-block">
 														<h6 class="m-b-0">{{ user.nom }} {{ user.prenom }}</h6>
-														<p class="m-b-0 fst-italic">- {{ user.identifiant }} -</p>
+														{% if is_granted('ROLE_ADMIN') %}
+															<p class="m-b-0 fst-italic">- {{ user.identifiant }} -</p>
+														{% endif %}
 														<p class="m-b-0">{{ user.email }}</p>
 													</div>
 												</div>
@@ -60,6 +64,7 @@
 											<td>{{ user.region|upper }}</td>
 											<td>{{ user.agence|upper }}</td>
 											<td>{{ user.service|upper }}</td>
+											{% if is_granted('ROLE_ADMIN') %}
 											<td>
 												<span class="badge bg-light-success">Actif</span>
 												<div class="overlay-edit">
@@ -68,6 +73,7 @@
 												</div>
 											</td>
 											<td>{{ user.identifiant }}</td>
+											{% endif %}
 										{% endfor %}
 									</tr>
 								</tbody>
